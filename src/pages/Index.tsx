@@ -14,17 +14,12 @@ const Index = () => {
 
     setTimeout(() => {
       const participants = 11;
-      const winner = Math.floor(Math.random() * participants) + 1;
-      const userNumber = Math.floor(Math.random() * participants) + 1;
+      const winnerPosition = 1;
+      const userPosition = Math.floor(Math.random() * participants) + 1;
 
-      setResult(userNumber === winner ? "win" : "lose");
+      setResult(userPosition === winnerPosition ? "win" : "lose");
       setGameState("finished");
     }, 2000);
-  };
-
-  const resetGame = () => {
-    setGameState("waiting");
-    setResult(null);
   };
 
   return (
@@ -41,9 +36,7 @@ const Index = () => {
           </div>
         )}
 
-        {gameState === "finished" && result && (
-          <GameResult result={result} onReset={resetGame} />
-        )}
+        {gameState === "finished" && result && <GameResult result={result} />}
       </div>
     </div>
   );

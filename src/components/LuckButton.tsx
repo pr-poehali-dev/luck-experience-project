@@ -12,7 +12,7 @@ const LuckButton = ({ onClick }: LuckButtonProps) => {
           Испытать удачу!
         </h1>
         <p className="text-lg text-gray-500 font-light max-w-md mx-auto">
-          Розыгрыш среди 11 участников. Шанс выигрыша 50/50. Один победитель.
+          Розыгрыш среди 11 участников. Только один победитель из всех.
         </p>
       </div>
 

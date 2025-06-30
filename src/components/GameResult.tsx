@@ -3,10 +3,9 @@ import Icon from "@/components/ui/icon";
 
 interface GameResultProps {
   result: "win" | "lose";
-  onReset: () => void;
 }
 
-const GameResult = ({ result, onReset }: GameResultProps) => {
+const GameResult = ({ result }: GameResultProps) => {
   const isWin = result === "win";
 
   return (
@@ -29,19 +28,10 @@ const GameResult = ({ result, onReset }: GameResultProps) => {
         </h2>
         <p className="text-lg text-gray-500 font-light">
           {isWin
-            ? "Поздравляем! Удача была на твоей стороне!"
-            : "В этот раз не повезло. Попробуй еще раз!"}
+            ? "Поздравляем! Ты единственный победитель!"
+            : "К сожалению, победитель уже определен."}
         </p>
       </div>
-
-      <Button
-        onClick={onReset}
-        variant="outline"
-        size="lg"
-        className="px-8 py-3 text-lg font-medium rounded-full transition-all duration-300 hover:scale-105"
-      >
-        Играть снова
-      </Button>
     </div>
   );
 };
